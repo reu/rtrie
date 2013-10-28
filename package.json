@@ -1,0 +1,27 @@
+{
+  "name": "rtrie",
+  "version": "0.0.0",
+  "description": "Trie based search for autocompletes with Redis.",
+  "main": "rtrie.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reu/rtrie"
+  },
+  "keywords": [
+    "autocomplete",
+    "auto-complete",
+    "completer",
+    "redis",
+    "trie"
+  ],
+  "author": "Rodrigo Navarro",
+  "license": "BSD",
+  "dependencies": {
+    "redis": "*",
+    "iconv": "*"
+  },
+  "devDependencies": {
+    "mocha": "latest",
+    "should": "latest"
+  }
+}
