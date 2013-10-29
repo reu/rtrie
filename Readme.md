@@ -21,14 +21,19 @@ cities.search("Campin", function(id, term, data) {
   // [4, "Campina Grande", { state: "PB", population: 20000 }]
 });
 
+```
+
 You can also specify a limit for the search function:
+```javascript
 var limit = 1;
 cities.search("Campin", limit, function(id, term, data) {
   // will call with:
   // [1, "Campinas", { state: "SP", population: 1000000 }]
 });
+```
 
-You may also creat a totally different item type database:
+You may also create a totally different item type database:
+```javascript
 var names = new Rtrie("names");
 
 names.index("Rodrigo", 1, { age: 27 });
