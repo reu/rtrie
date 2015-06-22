@@ -41,10 +41,7 @@ Rtrie.prototype.search = function(term) {
   redis.zrevrange([index, 0, limit - 1], function(error, ids) {
     if (ids.length > 0) {
       redis.hmget(this.metadataKey, ids, function(error, items) {
-        items.forEach(function(item) {
-          item = JSON.parse(item);
-          callback(item.id, item.term, item.data);
-        });
+        callback(items.map(JSON.parse));
       });
     }
   }.bind(this));
