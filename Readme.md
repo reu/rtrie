@@ -16,9 +16,11 @@ cities.index("Campina Grande", 4, { state: "PB", population: 20000 });
 
 // search(term, callback)
 cities.search("Campin", function(id, term, data) {
-  // will call with "Campinas" first because of the priority:
-  // [1, "Campinas", { state: "SP", population: 1000000 }]
-  // [4, "Campina Grande", { state: "PB", population: 20000 }]
+  // will return "Campinas" at the first position because of the priority:
+  // [
+  //   { id: 1, term: "Campinas", data: { state: "SP", population: 1000000 }}
+  //   { id: 4, term: "Campina Grande", data: { state: "PB", population: 20000 }}
+  // ]
 });
 
 ```
@@ -26,9 +28,8 @@ cities.search("Campin", function(id, term, data) {
 You can also specify a limit for the search function:
 ```javascript
 var limit = 1;
-cities.search("Campin", limit, function(id, term, data) {
-  // will call with:
-  // [1, "Campinas", { state: "SP", population: 1000000 }]
+cities.search("Campin", limit, function(items) {
+  // [{ id: 1, term: "Campinas", data: { state: "SP", population: 1000000 }}]
 });
 ```
 
